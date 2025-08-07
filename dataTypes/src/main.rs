@@ -38,5 +38,5 @@ fn main() {
     let _character: char = 'A';
     let _string: &str = "Hello, Rust!";
 
-    println!("inter value is {}", number);
+    println!("inter value is {number}");
 }

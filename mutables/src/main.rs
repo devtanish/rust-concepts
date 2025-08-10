@@ -10,4 +10,8 @@ fn main(){
     println!("The value of number is {number}");
     number = 43;
     println!("The value of number is {number}");
+
+    for i in 0..number{
+        println!("The value of i is {i}");
+    }
 }

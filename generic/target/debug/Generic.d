@@ -1,1 +1,1 @@
-/home/frost/Rust/rust-concepts/Generic/target/debug/Generic: /home/frost/Rust/rust-concepts/Generic/src/main.rs
+/home/frost/Rust/rust-concepts/generic/target/debug/Generic: /home/frost/Rust/rust-concepts/generic/src/main.rs

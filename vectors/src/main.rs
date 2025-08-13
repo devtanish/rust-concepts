@@ -1,8 +1,14 @@
 fn main(){
-    let vec: Vec<i8> = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let mut vec: Vec<i8> = vec![9, 5, 7, 4, 2, 1, 3, 6, 8];
 
-    for i in 0..vec.len() {
-        println!("{}", vec[i]);
-    }
+    println!("unsorted array: {:?}", vec);
 
+    sort_array(&mut vec);
+
+    println!("Sorted array: {:?}", vec);
+
+}
+
+fn sort_array(vec: &mut Vec<i8>){
+    vec.sort();
 }

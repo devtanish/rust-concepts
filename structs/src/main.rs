@@ -26,23 +26,48 @@
 #[derive(Clone)]
 
 //Structs in rust let you structure data together. Similar to objects in javascript
-struct User {
-    active: bool,
-    _sign_in_count: u64,
-    _username: String,
+struct Book {
+    title: String,
+    author: String,
+    pages: u32,
+    price: u32
+}
+
+impl Book {
+    fn book_info(&self){
+        println!("title of the book is: {}\nauthor of the book is: {}\npages of book are: {}\nprince is only: {}", self.title, self.author, self.pages, self.price);
+    }
+
+    fn is_expensive(&self) -> bool{
+        if self.price > 500 {
+            true
+        } else {
+            false
+        }
+    }
+
+    fn update_price(&mut self, new_price: u32){
+        self.price = new_price;
+    }
 }
 
 fn main() {
-    let user1 = User {
-        active: true,
-        _sign_in_count: 1,
-        _username: "harkirat".to_string()
+    let mut book1: Book = Book {
+        title: String::from("Rich Dad Poor Dad"),
+        author: String::from("Ram Lakhan"),
+        pages: 400,
+        price: 450
     };
 
-    change_name(user1.clone());
-    print!("User 1 username: {}", user1.active); // Error - can not use borrowed value
-}
+    let book2: Book = Book {
+        title: String::from("Rust Book"),
+        author: String::from("Davin jonson"),
+        pages: 1300,
+        price: 1550
+    };
 
-fn change_name(user1: User) {
-    print!("User 1 username: {:?}", user1.active);
+    book1.book_info();
+    book1.update_price(550);
+    book1.book_info();
+    println!("high price: {:?}", book2.is_expensive());
 }

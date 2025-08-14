@@ -1,14 +1,9 @@
-use std::fs;
+
 
 fn main() {
-    let data  = fs::read_to_string("data.txt");
-
-    match data {
-        Ok(content) => {
-            println!("File content:\n{}", content);
-        }
-        Err(e) => {
-            eprintln!("Error reading file: {}", e);
-        }
+    let file = std::fs::read_to_string("hello.txt");
+    match file {
+        Ok(content) => println!("{:?}", content),
+        Err(err) => println!("Error while reding file: {}", err)
     }
 }
